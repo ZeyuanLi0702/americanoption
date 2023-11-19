@@ -19,17 +19,6 @@ if __name__ == '__main__':
     l_benchmark = 131
     m_benchmark = 16
 
-    solver = AmericanOptionSolver(r, q, sigma, K, T, option_type)
-    solver.assign_par(n_benchmark, p_benchmark, l_benchmark, m_benchmark)
-    solver.use_derivative = False
-    solver.iter_tol = 0
-    solver.max_iters = 30
-    price = solver.solve(0.0, S)  # t and S
-    print("european price = ", solver.european_price)
-    print("american price = ", price)
-    print("american price = ", price - solver.european_price)
-    american_premium_benchmark = price - solver.european_price
-    american_premium_benchmark = 0.10695270125432899
 
     error_r = []
     for r_i in r:
